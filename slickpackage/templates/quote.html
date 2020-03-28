@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+ 
+	{%block head%}
+	<title>Get Quote | Slick Packages </title>
+
+	{% load static %}
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+  <link rel="stylesheet" href="{% static 'css/quote.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+{%endblock%}</head>
+<body style="background-color: #333333">
+	{%block body%}
+ <!-- Navigation -->
+   
+
+ <div style="height: 10%">
+  <img src="{% static 'img/quotetitle.png' %}">
+ <div class="row" style="background-color: #333333 ">
+
+   	<div class="col-lg-6">
+      <div style="position: relative;text-align: center;color: white;">
+   		 <img src="{% static 'img/quote-bg.png' %}">
+       <div style="position: absolute;top: 85%;left: 17%;transform: translate(-50%, -50%); font-size: 25px; color:#787878;">
+        <a href="javascript:history.back()"><img src="{% static 'img/qote.png' %}"></a>
+       </div>
+    </div>
+   </div>
+
+  	<div class="col-lg-6" style="background-color: #333333">
+
+			<form method="post">
+			<div class="form-group" style="color: grey; ">
+
+			{% csrf_token %}
+			{{form|crispy}}
+      </div>
+			<button class="btn btn-outline-warning btn-rounded waves-effect" style="color: white" type="submit"> Submit</button>
+			</form>
+  	</div>
+</div>
+
+</div>
+
+
+
+</body>
+
+
+</html>
+{%endblock%}
+</body>
+</html>
+

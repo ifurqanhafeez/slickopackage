@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1920px" height="1080px" viewBox="0 0 1920 1080" enable-background="new 0 0 1920 1080" xml:space="preserve">
+<g>
+	<polygon fill="#333333" points="700,581.278 702.01,581.994 745,561.078 745,525.672 700,545.797 	"/>
+	<path fill="#333333" d="M698.828,446.686c-51.536,0-93.315,41.779-93.315,93.314c0,51.538,41.779,93.314,93.315,93.314
+		s93.315-41.776,93.315-93.314C792.143,488.464,750.363,446.686,698.828,446.686z M754,566.231l-51.028,24.631L700,589.954V615h-8
+		v-27.783l-47.406-15.768l1.166-11.883l8.188,0.812l-0.512,5.339L692,578.541v-33.073l-62-19.413v-18.507l63.926-32.951
+		l48.242,19.311l-0.23,12.543l-8.22-0.169l0.147-6.85l-39.626-15.791L638,512.563v7.45l58.639,18.322L754,513.005V566.231z"/>
+</g>
+<text transform="matrix(1 0 0 1 811.8242 559.3281)" fill="#333333" font-family="'Montserrat-Bold'" font-size="66.1925">Slick</text>
+<text transform="matrix(1 0 0 1 988.3418 559.4609)" fill="#333333" font-family="'Montserrat-Regular'" font-size="66.1925">Packages</text>
+</svg>

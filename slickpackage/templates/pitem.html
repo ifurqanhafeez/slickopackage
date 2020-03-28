@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  {%block head%}
+  <title>Packages | Slick Packages </title>
+
+  {% load static %}
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css-01/bootstrap.min.css' %}">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/landing-page.min.css' %}">
+  <link rel="stylesheet" href="{% static 'owncss/style.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: width 2s
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+
+  width: 120px;
+  height: 120px;
+}
+
+.facebook {
+ 
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+
+  img{
+  width: 100%;
+}
+  </style>
+
+{%endblock%}</head>
+<body>
+  {%block body%}
+ <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/home/"><img src="{% static 'img/Logo.png' %}"></a>
+      <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li style="text-align: right;" class="nav-item">
+            <a class="nav-link" href="/category/">Pick a Package</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/industrycategory/">Pick An Industry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whyus/">Why Choose Us?</a>
+          </li>
+ 
+                    <div class="nav-item dropdown">
+            <button class="dropbtn" style="font-family:sans-serif;"><b>ABOUT</b>
+              
+            </button>
+            <div class="dropdown-content">
+              <a href="/about/"> <img src="{% static 'img/1.png' %}" style="width: 25%;padding: 5px;">About Us</a>
+              <a href="/contact/"><img src="{% static 'img/2.png' %}" style="width: 25%;padding: 5px;">Contact Us</a>
+              <a href="/terms/"><img src="{% static 'img/3.png' %}" style="width: 25%;padding: 5px;">Our Terms</a>
+          </div>
+
+          </div> 
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Page Header -->
+  <header   >
+       <div class="icon-bar">
+      <a href="/quote/" class="facebook"><img src="{% static 'img/chat.png' %}"></a> 
+    </div>
+   
+  </header>
+
+
+
+
+<!-- 
+{% block content %}
+
+  {% for packages in package %}      
+        <h2>{{packages.name}}</h2>
+        <h4>{{packages.description}}</h4>
+        <img src="{{ packages.image.url }}">
+   <br>
+  {% endfor %}
+{% endblock %} -->
+
+
+    <section id="projects" style="padding-top: 0px" class="projects-section bg-white">
+      <div class="container"  >
+
+
+
+      <!-- Project One Row -->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+        <div class="col-lg-6" style="padding-top:5em;">
+          <div id="carouselExampleIndicators" class="carousel slide col-lg-7" data-ride="carousel">
+
+          <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ul>
+  
+           
+  <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                {% if pitem.image01 %}
+                  <img class="img-fluid" src="{{ pitem.image01.url }}" alt="{{ pitem.name}}" style="width:300px;height:300px;">
+                {% endif %}
+              
+              </div>
+              <div class="carousel-item">
+                {% if pitem.image02 %}
+                  <img class="img-fluid" src="{{ pitem.image02.url }}" alt="{{ pitem.name}}" style="width:300px;height:300px;">
+                {% endif %}
+            
+              </div>
+              <div class="carousel-item">
+                {% if pitem.image03 %}
+                  <img class="img-fluid" src="{{ pitem.image03.url }}" alt="{{ pitem.name}}" style="width:300px;height:300px;">
+                {% endif %}
+              
+              </div>
+            </div>
+
+             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+  
+          </div>
+        </div>
+      <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 my-auto text-center text-lg-left">
+               <h3 class="text-Black" style="font-size: 30px; font-weight: bold;font-family: 'Montserrat Extra-Bold'; color:#333333;">{{ pitem.name}}</h3>
+              <p class="text-black-50 mb-0">{{pitem.description}}</p>
+               <p style="color: #333333"><b> Categories </b></p>
+
+                {% for box in pitem.packagesub_set.all %}
+                   <div class="row">
+
+                    {% if box.image01 %}
+                      <img class="img-fluid" src="{{ box.image01.url }}" alt="{{ box.name}}" style="width:50px;height:50px;">
+                     <div style="padding: 10px;font-family: 'Helvetica'; font-weight: lighter ; color: #707070 ">
+                        <h6><a href="{% url 'sitem' itemid=box.id%}" style="padding: 10px;font-family: 'Helvetica'; font-weight: bold;font-size: 14px ; color: #707070 ">{{box.name}}</a><h6>
+                     <!--    <p>{{ box.name}}</p> -->
+                    </div>
+                    {% endif %}
+
+
+                    </div>
+       
+                {%endfor%}
+
+                
+
+
+                
+              <hr class="d-none d-lg-block mb-0 ml-0">
+
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>                    
+     </div>
+ 
+</section>
+
+ <!--  <hr> -->
+
+  <!-- Footer -->
+  <footer>
+<!--    <img src="{% static 'img/About-connect.png' %}"> -->
+<div style="position: relative;text-align: center;color: white;">
+    <img src="{% static 'img/footer.png' %}">
+    <div style="position: absolute;top: 25%;left: 50%;transform: translate(-50%, -50%); font-size: 25px;">
+    <button type="button" class="btn btn-outline-warning btn-rounded waves-effect" onclick="window.location.href = '/quote/';">Discover</button>
+
+    </div>
+    <div style="position: absolute;top: 80%;left: 17%;transform: translate(-50%, -50%); font-size: 25px; color:#787878;">
+      <div class="text-black-50 mb-0" style="color: #787878 ;">
+        <h4 style="color: lightgrey; padding-bottom: 1em; ">About</h4>
+        <h5 style="padding: 3px;" ><a href="/about/" style="color: #787878 ">Company</a></h5>
+        <h5 style="padding: 3px;"><a href="/contact/" style="color: #787878">Contact Us</a></h5>
+        <h5 style="padding: 3px;"><a href="/terms/" style="color: #787878">Our Terms</a></h6>
+      </div>
+
+    </div>
+
+
+     <div style="position: absolute;top: 80%;left: 78%;transform: translate(-50%, -50%); font-size: 25px; color:#787878;">
+      <div class="text-black-50 mb-0" style="color: #787878 ;">
+        <h4 style="color: lightgrey; padding-bottom: 1em; ">Contact Us</h4>
+        <h5 style="padding: 3px;" ><a href="" style="color: #787878 ">+9261232448</a></h5>
+        <h5 style="padding: 3px;"><a href="#" style="color: #787878">abc@abc.com</a></h5>
+        <!-- <h5 style="padding: 3px;"><a href="#" style="color: #787878">Links</a></h6> -->
+      <div class="row" style=" padding-left: 30px;">
+      <a href="https://www.fb.com/"><img src="{% static 'img/facebook.png' %}"style="padding:6px;height:35px;width:25px" ></a>
+      <a href="https://www.instagram.com/"><img src="{% static 'img/instagram.png' %}" style="padding:6px;height:35px;width:35px"></a>
+      <a href="https://twitter.com/"><img src="{% static 'img/twitter.png' %}" style="padding:6px;height:35px;width:35px"></a>
+      </div>
+
+    </div>
+
+  </div>
+    <!-- <div class="container">
+      
+    </div>
+   --></footer>
+
+
+{%endblock%}</body>
+</html>

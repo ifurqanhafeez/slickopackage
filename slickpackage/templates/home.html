@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	{%block head%}
+  {% load static %}
+	<title> Slick Packages</title>
+
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'owncss/style.css' %}"/>
+    <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'csss/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/font-awesome.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/sb-admin-2.min.css' %}"/> 
+  <link rel="stylesheet" href="{% static 'csss/slicknav.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/jquery-ui.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/owl.carousel.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/animate.css' %}"/>
+  <link rel="stylesheet" href="{% static 'csss/style.css' %}"/>
+  <link rel="stylesheet" href="{% static 'owncss/style.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+<!--   {% static ' ' %} -->
+  <style>
+* {
+
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: width 2s
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+
+  width: 120px;
+  height: 120px;
+}
+
+.facebook {
+ 
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+/* Create two equal columns that floats next to each other */
+.columnn {
+  float: left;
+  width: 70%;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.roww:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+{%endblock%}</head>
+<body>
+
+
+	{%block body%}
+ <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="/home/"><img src="{% static 'img/Logo.png' %}"></a>
+      <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li style="text-align: right;" class="nav-item">
+            <a class="nav-link" href="/category/">Pick a Package</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/industrycategory/">Pick An Industry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/whyus/">Why Choose Us?</a>
+          </li>
+ 
+          <div class="nav-item dropdown">
+            <button class="dropbtn" style="font-family:sans-serif;"><b>ABOUT</b>
+              
+            </button>
+            <div class="dropdown-content">
+              <a href="/about/"> <img src="{% static 'img/1.png' %}" style="width: 25%;padding: 5px;">About Us</a>
+              <a href="/contact/"><img src="{% static 'img/2.png' %}" style="width: 25%;padding: 5px;">Contact Us</a>
+              <a href="/terms/"><img src="{% static 'img/3.png' %}" style="width: 25%;padding: 5px;">Our Terms</a>
+            </div>
+          </div> 
+
+           
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+  <!-- Page Header -->
+
+  <header class="masthead" >
+    <div class="icon-bar">
+      <a href="/quote/" class="facebook"><img src="{% static 'img/chat.png' %}"></a> 
+    </div>
+    <div class="row">
+    	<img src="{% static 'img/home-bg-up.png' %}" style="width: 100%">
+        <img src="{% static 'img/topdown.png' %}" style="width: 100%">
+
+    </div>
+    </div>
+  <!--   <div class="overlay">
+    	
+    </div> -->
+   
+  </header>
+  <div class="row" style="padding-top: 6em; ">
+     <img src="{% static 'img/home-bg-down2.png' %} " style="width: 100%">
+ </div>
+ 
+
+ <div style="position: relative;text-align: center;color: #333333;">
+    <img src="{% static 'img/ourprocess.png' %}" >
+    <div style="position: absolute;top: 60%;left: 53%;transform: translate(-50%, -50%); font-size: 25px;">
+    <div class="section-title" style="color: #333333">
+        <h2 style="color: #333333"><b>OUR PROCESS</b></h2>
+        <p><b>IN A NUTSHELL</b></p>
+    </div>
+    </div>
+  </div>
+
+
+    {% for box in steps %}
+
+      <!-- Project One Row -->
+    
+          <div id="carouselExampleIndicators" class="carousel slide col-lg-9" data-ride="carousel">
+
+          <!-- Indicators -->
+            
+  
+           
+  <!-- The slideshow -->
+            <div class="carousel-inner" style="padding-left: 400px;">
+              <div class="row" style="align-items: center;">
+               <div class="carousel-item active">
+                <div class="row" style="align-items: center;">
+                  {% if box.image01 %}
+                    <div class="col-sm-7">
+                        <img class="img-fluid" src="{{ box.image01.url }}" alt="{{ box.name}}" style="width:100%;">
+                    </div>
+                    <div class="col-sm-5"style="padding-left: 5em;">
+ 
+                            <h3 class="text-Black">{{ box.step01}}</h3>
+                            <p class="text-black-50 mb-0">{{box.detail01}}</p>
+                      
+                    </div>
+                         
+                  {% endif %}
+              </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row" style="align-items: center;">
+                {% if box.image02 %}
+                 <div class="col-sm-5" style="padding-right: 5em;">
+                  <h3 class="text-Black">{{ box.step02}}</h3>
+                  <p class="text-black-50 mb-0">{{box.detail02}}</p>
+                </div>
+                 <div class="col-sm-7">
+                     <img class="img-fluid" src="{{ box.image02.url }}" alt="{{ box.name}}" style="width:100%;">
+                 </div>
+                {% endif %}
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row" style="align-items: center;">
+                {% if box.image03 %}
+                 <div class="col-sm-7">
+                  <img class="img-fluid" src="{{ box.image03.url }}" alt="{{ box.name}}" style="width:100%">
+                </div>
+                 <div class="col-sm-5" style="padding-left: 5em;">
+ 
+                            <h3 class="text-Black">{{ box.step03}}</h3>
+                            <p class="text-black-50 mb-0">{{box.detail03}}</p>
+                      
+                    </div>
+                {% endif %}
+                </div>
+              
+              </div>
+            </div>
+
+            </div>
+
+             
+  
+          </div>
+                    
+    {% endfor %}
+
+
+ 
+
+  <!-- Footer -->
+<!--   quote getter -->
+
+    <div style="position: relative;text-align: center;color: white;padding-top: 10px;"> 
+      <img src="{% static 'img/quote.png' %}">
+      <div style="position: absolute;top: 70%;left: 50%;transform: translate(-50%, -50%); font-size: 25px;">
+        <button type="button" class="btn btn-outline-warning btn-rounded waves-effect" onclick="window.location.href = '/quote/';">I'm Ready</button>
+      </div>
+    </div>
+
+
+  <!-- letest product section -->
+  <section class="top-letest-product-section" style="background-color: white;" >
+    <div class="container">
+      <div class="section-title">
+        <h2><b>FEATURED PRODUCTS</b></h2>
+      </div>
+     
+      <div class="product-slider owl-carousel">
+
+
+      {% for product in products %}
+
+
+
+        <!-- these are the starting of cards -->
+        <div class="col-xl-40 col-lg-40"  style="width: 268px;">
+          <div class="card shadow-sm mb-6">
+            
+            <!-- Card Body -->
+            <div class="card-body" style="background-color: #eef7fa;">
+                
+                {% if product.image %}
+                  <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name}}" style="width:500px;height:250px;">
+                {% endif %}
+
+                <h3 class="text-Black" style="padding-top: 1em; text-align: center;">{{ product.name}}</h3>
+                <p class="text-black-50 mb-0" style="padding-bottom: 1em; text-align: center;">{{product.description}}</p>
+ 
+            </div>
+          </div>
+        </div>
+
+    {% endfor %}
+        
+      </div>
+    </div>
+  </section>
+
+
+<footer>
+
+<div style="position: relative;text-align: center;color: white;">
+    <img src="{% static 'img/footer.png' %}">
+    <div style="position: absolute;top: 25%;left: 50%;transform: translate(-50%, -50%); font-size: 25px;">
+    <button type="button" class="btn btn-outline-warning btn-rounded waves-effect" onclick="window.location.href = '/quote/';">I'm Ready</button>
+
+    </div>
+
+<div style="position: absolute;top: 80%;left: 17%;transform: translate(-50%, -50%); font-size: 25px; color:#787878;">
+      <div class="text-black-50 mb-0" style="color: #787878 ;">
+        <h4 style="color: lightgrey; padding-bottom: 1em; ">About</h4>
+        <h5 style="padding: 3px;" ><a href="/about/" style="color: #787878 ">Company</a></h5>
+        <h5 style="padding: 3px;"><a href="/contact/" style="color: #787878">Contact Us</a></h5>
+        <h5 style="padding: 3px;"><a href="/terms/" style="color: #787878">Our Terms</a></h6>
+      </div>
+
+    </div>
+
+
+     <div style="position: absolute;top: 80%;left: 78%;transform: translate(-50%, -50%); font-size: 25px; color:#787878;">
+      <div class="text-black-50 mb-0" style="color: #787878 ;">
+        <h4 style="color: lightgrey; padding-bottom: 1em; ">Contact Us</h4>
+        <h5 style="padding: 3px;" ><a href="" style="color: #787878 ">+9261232448</a></h5>
+        <h5 style="padding: 3px;"><a href="#" style="color: #787878">abc@abc.com</a></h5>
+        <!-- <h5 style="padding: 3px;"><a href="#" style="color: #787878">Links</a></h6> -->
+      <div class="row" style=" padding-left: 30px;">
+      <a href="https://www.fb.com/"><img src="{% static 'img/facebook.png' %}"style="padding:6px;height:35px;width:25px" ></a>
+      <a href="https://www.instagram.com/"><img src="{% static 'img/instagram.png' %}" style="padding:6px;height:35px;width:35px"></a>
+      <a href="https://twitter.com/"><img src="{% static 'img/twitter.png' %}" style="padding:6px;height:35px;width:35px"></a>
+      </div>
+
+    </div>
+
+
+  </div>
+    <!-- <div class="container">
+      
+    </div>
+   -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+ </footer>
+
+  <!--====== Javascripts & Jquery ======-->
+  <script src="{% static 'jss/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'jss/bootstrap.min.js' %}"></script>
+  <script src="{% static 'jss/jquery.slicknav.min.js' %}"></script>
+  <script src="{% static 'jss/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'jss/jquery.nicescroll.min.js' %}"></script>
+  <script src="{% static 'jss/jquery.zoom.min.js' %}"></script>
+  <script src="{% static 'jss/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'jss/main.js' %}"></script>
+
+{%endblock%}
+</body>
+</html>
